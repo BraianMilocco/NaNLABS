@@ -18,4 +18,4 @@ def create_issue(json_):
         params=query
     )
 
-    return  {'issue':'created'}
+    return  response.status_code

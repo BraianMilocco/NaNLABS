@@ -24,4 +24,4 @@ def create_task(json_):
         params=query
     )
 
-    return  {'task':'created'}#json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": "))
+    return  response.status_code

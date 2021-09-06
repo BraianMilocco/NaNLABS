@@ -22,8 +22,7 @@ def create_bug(json_):
         params=query
     )
 
-    print(response.text)
-    return  {'bug':'created'}
+    return  response.status_code
 
 def get_member():
 
@@ -36,7 +35,7 @@ def get_member():
     response = requests.request("GET",url_members)
 
     members = response.json()
-    members_cant = len(response.json()) - 1
-    id_random =  random.randint(0,members_cant)
+    members_len = len(response.json()) - 1
+    id_random =  random.randint(0,members_len)
 
     return members[id_random]['id']

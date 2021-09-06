@@ -19,11 +19,6 @@ pip3 install virtualenv
 
 
 ## Instalación
- - crear carpeta del proyecto, ingresar a la misma
- - iniciar git 
-```bash
-git init
-```
  - clonar repositorio
 ```bash
 git clone https://github.com/BraianMilocco/NaNLABS.git

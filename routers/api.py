@@ -28,4 +28,5 @@ async def read_root(request: Request):
     if not validation_function(body):
         return error_message
 
-    return functions_card[type_](body)  
+    status = functions_card[type_](body)  
+    return {'status': status}
