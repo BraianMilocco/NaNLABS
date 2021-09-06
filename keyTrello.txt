@@ -1,6 +1,6 @@
-trelloKey = 3244edf7c8cb7abc74266a36ef9937b4
-trelloToken=c1376c008c210c8dc4dc53cce0cbe126800cf678cc86a6885def9845f65b9872
-id Board: 6131552b579a6517c2e086c9
+export trelloKey = 3244edf7c8cb7abc74266a36ef9937b4
+export trelloToken=c1376c008c210c8dc4dc53cce0cbe126800cf678cc86a6885def9845f65b9872
+export trelloBoard=6131552b579a6517c2e086c9
 
 trelloToDo=6131552b579a6517c2e086ca
 

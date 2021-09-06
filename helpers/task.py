@@ -1,16 +1,19 @@
 import os 
 import requests
 import json
+from .apiGeneral import url, headers
+from .messages import error_message
+from .apiGeneral import  url, headers, valid_categories
 
 def create_task(json_):
-    url = "https://api.trello.com/1/cards?key={}&token={}".format(os.getenv('trelloKey', None), os.getenv('trelloToken', None))
-    headers = {
-    "Accept": "application/json"
-    }
 
+    if json_.get('category') not in valid_categories:
+        return error_message
+        
+    idLabel = str(os.getenv(json_.get('category'), None))
     query = {
     'idList': os.getenv('trelloToDo', None),
-    'idLabels': [str(os.getenv(json_.get('category'), None))],
+    'idLabels': [idLabel],
     'name': json_.get('title')
     }
 
@@ -21,4 +24,4 @@ def create_task(json_):
         params=query
     )
 
-    return json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": "))
+    return  {'task':'created'}#json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": "))
